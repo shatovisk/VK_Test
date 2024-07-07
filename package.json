@@ -1,0 +1,28 @@
+{
+  "name": "vk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:create": "npx playwright test tests/testCases/createIssue.test.ts",
+    "test:check": "npx playwright test tests/testCases/checkIssue.test.ts",
+    "test:update": "npx playwright test tests/testCases/updateIssue.test.ts",
+    "test:delete": "npx playwright test tests/testCases/deleteIssue.test.ts",
+    "test:sequential": "npm run test:create && npm run test:check && npm run test:update && npm run test:delete",
+    "generate:allure-report": "allure generate allure-results --clean -o allure-report",
+    "open:allure-report": "allure open allure-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@playwright/test": "^1.45.1",
+    "dotenv": "^16.4.5",
+    "playwright": "^1.45.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "allure-commandline": "^2.29.0",
+    "allure-playwright": "^3.0.0-beta.6"
+  }
+}
